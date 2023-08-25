@@ -1,0 +1,33 @@
+{
+    "root": {
+        "title": "Wellcome to Junior's place",
+        "body": "The perferct place to develope your skills as a web developer",
+        "subbody": "In this site your can learn about web developing front to back"
+    },
+    "pages" : [
+         {
+            "page_title": "HTML",
+            "page_description": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.",
+            "href": "/html"
+        },
+        {
+            "page_title": "CSS",
+            "page_description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).",
+            "href": "/css"
+        },        {
+            "page_title": "Node.js",
+            "page_description": "Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.",
+            "href": "/nodejs"
+        },        {
+            "page_title": "React",
+            "page_description": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.",
+            "href": "/react"
+        },        
+        {
+            "page_title": "Others",
+            "page_description": "In the Explore page contains information about Mongodb and Firebase data bases, explanation about Vue.js and tips from the best.",
+            "href": "/explore"
+        }
+    ]
+
+}
