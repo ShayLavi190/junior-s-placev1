@@ -1,5 +1,5 @@
 
-.font3
+.font3cs
 {
   color: #00eefb;
   font-size: 40px;
@@ -8,7 +8,7 @@
 
 
 }
-  .font
+  .fontcs
   {
     color: white;
     text-align: center;
@@ -17,7 +17,7 @@
     margin-left: 140px;
 
   }
-  .font2
+  .font2cs
   {
     color: white;
     text-align: center;
@@ -25,7 +25,7 @@
     font-size: 30px;
     margin-left: 140px;
   }  
-  .sidenav {
+  .sidenavv {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
@@ -39,16 +39,16 @@
   }
 
   /* The navigation menu links */
-  .sidenav a {
+  .sidenavv a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #818181;
     display: block;
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+  .sidenavv a:hover {
     color: #f1f1f1;
   }
   
@@ -59,7 +59,12 @@
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 800px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .fontcs{margin-top: 20px; font-size: 25px;}
+    .font2cs{font-size: 22px;}
+    .fontcs{font-size: 21px;}
+    .font3cs{font-size: 23px;}
+    .textblockcss{position: relative;top:80px;right: 5px;}
   }

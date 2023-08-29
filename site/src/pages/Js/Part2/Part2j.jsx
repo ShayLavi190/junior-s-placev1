@@ -7,13 +7,27 @@ import e4 from './e4.png'
 import e5 from './e5.png'
 import e6 from './e6.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Part2j() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
@@ -23,7 +37,7 @@ function Part2j() {
         <a href="/js/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
                 <h2>JavaScript Number Methods</h2>
                 <p><b>These number methods can be used on all JavaScript numbers:</b></p>
                 <ul>
@@ -73,12 +87,12 @@ function Part2j() {
                 <ul>
                     <li>new Date()</li>
                     <li>new Date(date string)</li>
-                    <li>new Date(year,month)</li>
-                    <li>new Date(year,month,day)</li>
-                    <li>new Date(year,month,day,hours)</li>
-                    <li>Date(year,month,day,hours,minutes)</li>
-                    <li>new Date(year,month,day,hours,minutes,seconds)</li>
-                    <li>new Date(year,month,day,hours,minutes,seconds,ms)</li>
+                    <li>new Date(y,m)</li>
+                    <li>new Date(y,m,d)</li>
+                    <li>new Date(y,m,d,h)</li>
+                    <li>Date(y,m,d,h,m)</li>
+                    <li>new Date(y,m,d,h,m,s)</li>
+                    <li>new Date(y,m,d,h,m,s,ms)</li>
                     <li>new Date(milliseconds)</li>
                 </ul>
                 <p>JavaScript will (by default) output dates using the toString() method. This is a string representation of the date, including the time zone.</p>
@@ -91,7 +105,7 @@ function Part2j() {
                 <h2>JavaScript Math Object</h2>
                 <p>The JavaScript Math object allows you to perform mathematical tasks on numbers.Unlike other objects, the Math object has no constructor. The Math object is static. All methods and properties can be used without creating a Math object first.</p>
                 <h2>JavaScript Math Methods</h2>
-                <img  className = 'image' src= {e1}/>
+                <img  className = 'imagejs' src= {e1}/>
                 <h2>JavaScript Booleans</h2>
                 <p>A JavaScript Boolean represents one of two values: true or false.</p>
                 <h2>JavaScript if, else, and else if</h2>
@@ -104,7 +118,7 @@ function Part2j() {
                     <li>Use switch to specify many alternative blocks of code to be executed.</li>
                 </ul>
                 <p>Example for switch:</p>
-                <img  className = 'image2' src= {e2}/>
+                <img  className = 'imagejs' src= {e2}/>
                 <h2>JavaScript Loops</h2>
                 <p><b>JavaScript supports different kinds of loops:</b></p>
                 <ul>
@@ -141,12 +155,12 @@ function Part2j() {
                     <li>size - Returns the number of elements in a Map</li>
                 </ul>
                 <p><b>JavaScript Objects vs Maps:</b></p>
-                <img  className = 'image2' src= {e3}/>
+                <img  className = 'imagejs' src= {e3}/>
                 <h2>JavaScript Errors</h2>
                 <p>When executing JavaScript code, different errors can occur. Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.</p>
                 <p>The try statement defines a code block to run (to try). The catch statement defines a code block to handle any error. The finally statement defines a code block to run regardless of the result. The throw statement defines a custom error.</p>
                 <h2>JavaScript Scope</h2>
-                <img  className = 'image' src= {e4}/>
+                <img  className = 'imagejs' src= {e4}/>
                 <h2>JavaScript Use Strict</h2>
                 <p>"use strict"; Defines that JavaScript code should be executed in "strict mode". The "use strict" directive was new in ECMAScript version 5. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. The purpose of "use strict" is to indicate that the code should be executed in "strict mode". With strict mode, you can not, for example, use undeclared variables. All modern browsers support "use strict" except Internet Explorer 9 and lower</p>
                 <h2>JavaScript Arrow Function</h2>
@@ -156,7 +170,7 @@ function Part2j() {
                 <h2>JavaScript Closures</h2>
                 <p>JavaScript variables can belong to the local or global scope. Global variables can be made local (private) with closures.</p>
                 <p><b>Example:</b></p>
-                <img  className = 'image2' src= {e5}/>
+                <img  className = 'imagejs' src= {e5}/>
                 <h2>JavaScript Modules</h2>
                 <p>JavaScript modules allow you to break up your code into separate files. This makes it easier to maintain a code-base. Modules are imported from external files with the import statement. Modules with functions or variables can be stored in any external file. There are two types of exports: Named Exports and Default Exports.</p>
                 <h2>JavaScript JSON</h2>
@@ -169,7 +183,7 @@ function Part2j() {
                     <li>JSON is "self-describing" and easy to understand</li>
                 </ul>
                 <p>* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language. The JSON format is syntactically identical to the code for creating JavaScript objects. Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects. A common use of JSON is to read data from a web server, and display the data in a web page. JSON.parse() is a built-in function that use to convert the string into a JavaScript object. A common use of JSON is to exchange data to/from a web server. When sending data to a web server, the data has to be a string. Convert a JavaScript object into a string with JSON.stringify().</p>
-                <img  className = 'image' src= {e6}/>
+                <img  className = 'imagejs' src= {e6}/>
                 <h2>JavaScript Best Practices</h2>
                 <ul>
                     <li><b>Avoid Global Variables</b> - Minimize the use of global variables. This includes all data types, objects, and functions.</li>

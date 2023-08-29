@@ -2,13 +2,27 @@ import React from 'react'
 import './Forms.css'
 import e1 from './e1.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Forms() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width : '120px'}}>
       <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -17,7 +31,7 @@ function Forms() {
         <a href="/html/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockforms">
                 <h2>HTML Forms</h2>
                 <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing.</p>
                 <h2>The &lt;form&gt; Element</h2>
@@ -32,7 +46,7 @@ function Forms() {
                     <li>&lt;input type="submit"&gt; - Displays a submit button (for submitting the form)</li>
                     <li>&lt;input type="button"&gt; - Displays a clickable button	</li>
                 </ul>
-                <img  className = 'images' src= {e1}/>
+                <img  className = 'imagesforms' src= {e1}/>
                 <h2>The Action Attribute</h2>
                 <p>The action attribute defines the action to be performed when the form is submitted. Usually, the form data is sent to a file on the server when the user clicks on the submit button.</p>
                 <h2>The Target Attribute</h2>

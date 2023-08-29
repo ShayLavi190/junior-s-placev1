@@ -59,11 +59,13 @@
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 800px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .white-text-blockforms{position: relative; top: 8px; right: 50px;width:73%;}
+    .imagesforms{width: 200%}
   }
-  .white-text-block
+  .white-text-blockforms
   {
     background-color: rgb(228, 228, 228);
     color: black;
@@ -74,21 +76,7 @@
     opacity: 90%;
     border-radius: 7px;
   }
-  .images
-  {
-    margin: 10px;
-    border-radius: 7px;
-    width: 50%;
-    height: 50%;
-  }
-  .images2
-  {
-    margin: 10px;
-    border-radius: 7px;
-    width: 50%;
-    height: 50%;
-  }
-  .images3
+  .imagesforms
   {
     margin: 10px;
     border-radius: 7px;

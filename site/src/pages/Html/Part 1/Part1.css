@@ -4,7 +4,6 @@
   color: #00eefb;
   font-size: 40px;
   text-align: center;
-  margin-left: 140px;
 
 
 }
@@ -14,7 +13,6 @@
     text-align: center;
     margin-top: 200px;
     margin-bottom: 50px;
-    margin-left: 140px;
 
   }
   .font2
@@ -58,12 +56,14 @@
     padding: 0px 10px;
   }
   
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 800px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav a {font-size: 10px;}
+    .white-text-blockp1{position: relative; bottom: 50px; right: 40px;width:69%;}
+    .images11{width: 200%;}
+    .images21{width: 200%}
   }
-  .white-text-block
+  .white-text-blockp1
   {
     background-color: rgb(228, 228, 228);
     color: black;
@@ -73,22 +73,16 @@
     border: 1px solid rgb(168, 166, 166);
     opacity: 90%;
     border-radius: 7px;
+    position: relative; top:8px
   }
-  .images
+  .images11
   {
     margin: 10px;
     border-radius: 7px;
     width: 70%;
     height: 70%;
   }
-  .images2
-  {
-    margin: 10px;
-    border-radius: 7px;
-    width: 70%;
-    height: 70%;
-  }
-  .images3
+  .images21
   {
     margin: 10px;
     border-radius: 7px;

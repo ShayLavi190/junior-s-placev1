@@ -11,18 +11,33 @@ import e7 from './e7.png'
 import e8 from './e8.png'
 import e9 from './e9.png'
 import e10 from './e10.png'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
+
 function Tools() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/explore/tools">Tools</a>
         <a href="/explore/courses">Courses</a>
         <a href="/explore/tips">Tips</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
               <p>AI-powered tools have significantly evolved over the past few years. They have applications in almost every business sector, including education, lifestyle, navigation, health care, gaming, agriculture, marketing, finance, etc. It is no surprise that Artificial Intelligence has also slowly begun to seep its roots into the web development sector as well. There are already solutions that can create a fully-fledged website with images and content within minutes. Although these generated web templates are far from perfect, they are promising. There is more. Even though AI-powered platforms are no match for skilled and experienced web developers, they can streamline, simplify, and speed up workflow by providing coders a helping hand in numerous tasks and solving some iterative chores.</p>
               <ul>
                 <li>AI Tools for Email Marketers</li>
@@ -78,10 +93,10 @@ function Tools() {
               <h2>Top 10 AI Tools for Web Developers to Try</h2>
               <p>Let’s be honest; you will not find an AI tool to replace a web developer completely. Even brilliant website builders require human intervention to produce an outcome that meets the end user’s requirements, needs, and expectations. Do not expect AI tools to do everything. However, they can drastically simplify workflow, eliminate common human errors, increase security, improve product quality, save precious time, reduce stress, and give you more opportunities to be creative.</p>
               <p><b>ChatGPT</b></p>
-              <img className = 'images3' src= {e1}/>
+              <img className = 'imagereact' src= {e1}/>
               <p>We are going to start with <a href='https://openai.com/blog/chatgpt'>ChatGPT</a>. Although it cannot write code, it is helpful for web developers. Its broad expertise and ability to follow a conversation are notable. So, what can it do for coders? First, summarize information, display specifications, requirements, and best practices in a well-organized manner. Second, scan the code to identify areas where sensitive data is handled. It looks for common weaknesses like SQL injection or cross-site scripting attacks. It can also offer insightful suggestions and a customized development roadmap for the purpose. It provides actionable recommendations for improving the security of the presented code snippet and offers guidance on mitigating risks. Third, aid in automating unit tests, taking into account certain variables. It can provide small, isolated unit tests perfect for QA testing to ensure the code behaves as expected. It may also suggest code snippets to catch bugs early on. Its most significant advantage is that it runs repeatedly and quickly those tests ensuring the quality of the snippet. Fourth, generate code snippets based on a conversational prompt. By describing a problem to a chatbot, web developers can get a specific code snippet in response using the language of their choice. Check out our hand-picked collection of ChatGPT prompts and email marketing prompts already featuring valuable solutions for web designers, copywriters, and UX designers. It is regularly updated, so expect some other quick solutions to common, burning, and even unexpected issues that creatives stumble upon daily during their work.</p>
               <h2>Copilot by GitHub</h2>
-              <img className = 'images3' src= {e2}/>
+              <img className = 'imagereact' src= {e2}/>
               <p>Founded 15 years ago, GitHub is the most famous Internet hosting service for software development and version control using Git. Every web developer knows what that is. Unsurprisingly, it has become one of the pioneers of introducing AI technologies in web development. The team’s take on this niche is an AI assistant that uses the OpenAI Codex to suggest code and entire functions in real-time. Having the luxury of being trained on billions of lines of code and monitored and improved by the best web developers in the World, <a href='https://github.com/features/copilot'>Github Copilot</a> accurately turns natural language prompts into coding suggestions across dozens of languages. Its main goal is to code faster and more efficiently, focusing on business logic and polishing software to bring the world the best possible outcome.</p>
               <p>Among its main features are the following:</p>
               <ul>
@@ -94,16 +109,16 @@ function Tools() {
                 <li>Providing industry-leading privacy.</li>
               </ul>
               <h2>Sketch2Code</h2>
-              <img className = 'images3' src= {e3}/>
+              <img className = 'imagereact' src= {e3}/>
               <p><a href='https://www.microsoft.com/en-us/ai/ai-lab-sketch2code'>Sketch2Code</a> is a unique AI tool offered by Microsoft. Unlike Copilot, this one is intended to cover the basic needs of both web designers and developers. Its task is to convert a simple hand-drawn sketch into a working HTML boilerplate, skipping a vast stage in website building. Using AI, it offers creatives to share their thoughts via digital whiteboards. Then, it captures the images, runs them through its sophisticated AI model to detect patterns, and translates that understanding into HTML code. It efficiently detects a wide range of types of objects and produces a corresponding code snippet because it has been trained on millions of data sets. It may even predict the size and location of objects on the page. It undoubtedly makes mistakes; however, human intervention can easily mitigate and eliminate them. Web developers may benefit significantly from it. They may convert their ideas into HTML templates, generate a code snippet for a UI unit, and do other everyday chores within minutes.</p>
               <h2>Appy Pie Website</h2>
               <img className = 'images3' src= {e4}/>
               <p>Although <a href='https://www.appypie.com/ai-website-builder'>Appy Pie</a> mainly targets citizen developers, those with coding skills and a wealth of experience may also enjoy its potential. After all, as an AI-powered web builder, it offers to create boilerplates and wireframes for web applications within minutes, saving lots of precious time and effort as well as minimizing the amount of coding that should be done during iterative tasks. With Appy Pie, users may create mobile applications compatible with various popular operating systems and websites in a short time. The good news is the platform works with prompts. Users just input in plain text what they need, and the platform generates the output. From customizable themes and traditional layouts to advanced tools, it has some unique features that help the web interface meet users’ requirements and expectations and fit brand identity.</p>
               <h2>Uizard</h2>
-              <img className = 'images3' src= {e5}/>
+              <img className = 'imagereact' src= {e5}/>
               <p><a href='https://uizard.io/'>Uizard</a> is a rapid prototyping tool that AI powers to generate the fastest results without much effort. Much like Sketch2Code by Microsoft, it was also developed to convert hand-drawn sketches into fully-fledged and high-fidelity prototypes, speeding up workflow, eliminating most common manual mistakes, and saving lots of precious time. It is excellent for developing prototypes of landing pages, productivity applications, iOS mobile, and SaaS web applications. Using computer vision and machine learning algorithms, it transforms the wireframe images into fully coded boilerplates in three different languages: HTML & CSS, React, or Android. This is great for those web developers who need to visualize ideas or alter them according to the client’s needs without losing time. The platform is excellent at reconfiguring and rewriting code by itself. Uizard offers a collaborative environment where team members and clients can work on the same project.</p>
               <h2>Tabnine</h2>
-              <img className = 'images3' src= {e6}/>
+              <img className = 'imagereact' src= {e6}/>
               <p>Trusted by millions of developers, including Amazon, Gitlab, and Comcast, <a href='https://www.tabnine.com/'>Tabnine</a> is undoubtedly an AI assistant to try. It was created to speed up workflows and reduce costly code review iterations. Using various trained models, it predicts and suggests the next lines of code based on context and syntax, which in most cases, are true. Among its main capabilities are the following:</p>
               <ul>
                 <li>Completion of the whole line and function, whether long or advanced.</li>
@@ -114,7 +129,7 @@ function Tools() {
               </ul>
               <p>The main benefit of Tabnine is that it can be run not only on the user’s laptop but also on a server inside and in the cloud. Quickly adapting to the developer’s style, it is an excellent choice for auto-completion in your beloved editor.</p>
               <h2>Snyk</h2>
-              <img className = 'images3' src= {e7}/>
+              <img className = 'imagereact' src= {e7}/>
               <p>Security is everything. Therefore, it is no surprise that a tool to increase code security using an advanced AI engine has been invented. <a href='https://snyk.io/product/snyk-code/'>Snyk</a> is a brilliant AI-driven assistant that meets the market’s growing demands by analyzing code, spotting and highlighting errors, and providing legitimate, actionable information that engineers can use to improve results and reduce vulnerabilities. Snyk is a relatively young product, but it already occupies a strong position in the market. Use it to do these tasks:</p>
               <ul>
                 <li>Find issues with the help of an intelligent AI-based scanner.</li>
@@ -126,13 +141,13 @@ function Tools() {
               </ul>
               <p>The platform works great with many languages, including JavaScript, Java, .NET, Python, Objective-C, Scala, Ruby, and PHP, and integrates with numerous platforms, including Git repositories, IDEs, CI/CD, and others.</p>
               <h2>Mintlify</h2>
-              <img className = 'images3' src= {e8}/>
+              <img className = 'imagereact' src= {e8}/>
               <p>Like it or not, every good software code should be thoroughly documented. Everyone agrees that creating docs takes all fun out of the development process. Indeed, it is one of the most tedious and time-consuming stages during the workflow. However, what if I say that there is an AI assistant that will do this heavy lifting for you? <a href='https://mintlify.com/'>Mintlify</a> automates these chores. Created by two talented and skilled software engineers two years ago, Mintlify has found its rightful place by solving one of the most tedious tasks in the software development process – creating documentation. It scans code and generates documentation to explain it. Since it uses AI, its work is pretty accurate, whereas explanations are readable and understandable. Using natural language processing and web scraping capabilities, it creates docs, analyzes their readability, and even automates job management and development workflows in popular platforms and systems like Slack, Dropbox, and GitHub. Use it to improve and speed up doc creation for your next project.</p>
               <h2>Tricentis</h2>
-              <img className = 'images3' src= {e9}/>
+              <img className = 'imagereact' src= {e9}/>
               <p>This software testing company knows something about software quality assurance products for enterprises. They have developed an AI-powered assistant to automate testing routines and make this process more efficient, manageable, and faster. <a href='https://www.tricentis.com/lp/testim-trial-test-automation-ppc'>Tricentis</a> optimizes and accelerates end-to-end testing. It covers a range of capabilities, including risk-based testing, GUI and design testing, SAP testing, API testing, service virtualization, exploratory testing, and others. Using machine learning algorithms, it efficiently automates end-to-end testing across SAP and associated applications. It offers self-healing and auto-improving Smart Locators that keep tests stable. Plus, it has TestOps tools to help your team troubleshoot fast, reduce maintenance, and scale quality initiatives. The platform is commonly used for web, cloud-native, and mobile applications.</p>
               <h2>Durable</h2>
-              <img className = 'images3' src= {e10}/>
+              <img className = 'imagereact' src= {e10}/>
               <p><a href='https://durable.co/'>Durable</a> is a website builder that is powered by AI. Using cutting-edge technologies, the next-level product allows users to create a fully-fledged website with beautiful design, readable content, and images in less than a minute. Although this ability is excellent for citizen developers, web developers can also benefit from it. For instance, they can use it to kickstart a project quickly, create dummy websites to showcase the point to the clients, and, most importantly, create a solid foundation to build on. The best part is the platform integrates with analytics tools, CRM, marketing platforms, and payment getaways. Therefore, web developers may easily create a fully-fledged website ready to run marketing campaigns, sell products and “grow” along the way thanks to thorough analysis by professional software.</p>
           </div>
       </div>

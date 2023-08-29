@@ -6,12 +6,26 @@ import e3 from './e3.png'
 import e4 from './e4.png'
 import e5 from './e5.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 function Ajax() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
@@ -21,7 +35,7 @@ function Ajax() {
         <a href="/js/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
             <p>AJAX is a developer's dream, because you can:</p>
             <ul>
                 <li>Read data from a web server - after the page has loaded</li>
@@ -50,18 +64,18 @@ function Ajax() {
                 <li>Open the XMLHttpRequest object</li>
                 <li>Send a Request to a server</li>
             </ul>
-            <img  className = 'image' src= {e4}/>
+            <img  className = 'imagejs' src= {e4}/>
             <p>All modern browsers (Chrome, Firefox, IE, Edge, Safari, Opera) have a built-in XMLHttpRequest object. Syntax for creating an XMLHttpRequest object:</p>
             <p>variable = new XMLHttpRequest();</p>
             <p>A callback function is a function passed as a parameter to another function. In this case, the callback function should contain the code to execute when the response is ready.</p>
             <p>To send a request to a server, you can use the open() and send() methods of the XMLHttpRequest object.</p>
             <p><b>XMLHttpRequest Object Methods</b></p>
-            <img  className = 'image' src= {e1}/>
+            <img  className = 'imagejs' src= {e1}/>
             <p><b>XMLHttpRequest Object Properties</b></p>
-            <img  className = 'image' src= {e2}/>
+            <img  className = 'imagejs' src= {e2}/>
             <h2>XMLHttpRequest</h2>
             <p>The XMLHttpRequest object is used to request data from a server.</p>
-            <img  className = 'image' src= {e3}/>
+            <img  className = 'imagejs' src= {e3}/>
             <h2>Asynchronous - True or False?</h2>
             <p>Server requests should be sent asynchronously. The async parameter of the open() method should be set to true: </p>
             <p>xhttp.open("GET", "ajax_test.asp", true);</p>
@@ -97,7 +111,7 @@ function Ajax() {
                 <li>getResponseHeader()	- Returns specific header information from the server resource</li>
                 <li>getAllResponseHeaders()	- Returns all the header information from the server resource</li>
             </ul>
-            <img  className = 'image' src= {e5}/>
+            <img  className = 'imagejs' src= {e5}/>
             </div>
         </div>
       <footer class="py-3 bg-dark fixed-bottom">

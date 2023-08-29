@@ -5,13 +5,27 @@ import e2 from './e2.png'
 import e3 from './e3.png'
 import e4 from './e4.gif'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Part2() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -20,24 +34,24 @@ function Part2() {
         <a href="/html/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockp2">
                 <h2>HTML Lists</h2>
                 <p>HTML lists allow web developers to group a set of related items in lists.</p>
                 <p>There is two types of lists ordered and unordered (1,2,3....)</p>
                 <p>An unordered list starts with the &lt;ul&gt; tag. Each list item starts with the &lt;li&gt; tag. The list items will be marked with bullets (small black circles) by default</p>
                 <p>An ordered list starts with the &lt;ol&gt; tag. Each list item starts with the &lt;li&gt; tag.The list items will be marked with numbers by default:</p>
                 <p>HTML also supports description lists. A description list is a list of terms, with a description of each term. The &lt;dl&gt; tag defines the description list, the &lt;dt&gt; tag defines the term (name), and the &lt;dd&gt; tag describes each term</p>
-                <img  className = 'images2' src= {e1}/>
+                <img  className = 'images2p2' src= {e1}/>
                 <h2>HTML Block and Inline Elements</h2>
                 <p>Every HTML element has a default display value, depending on what type of element it is. There are two display values: block and inline.</p>
                 <h2>Block-level Elements</h2>
                 <p>A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.</p>
                 <p><b>List of the block elements:</b></p>
-                <img  className = 'images3' src= {e3}/>
+                <img  className = 'images2p2' src= {e3}/>
                 <h2>Inline Elements</h2>
                 <p>An inline element does not start on a new line. An inline element only takes up as much width as necessary.</p>
                 <p><b>List of the inline elements:</b></p>
-                <img  className = 'images3' src= {e2}/>
+                <img  className = 'images2p2' src= {e2}/>
                 <h2>The &lt;div&gt; Element</h2>
                 <p>The &lt;div&gt; element is often used as a container for other HTML elements. The &lt;div&gt; element has no required attributes, but style, class and id are common. When used together with CSS, the &lt;div&gt; element can be used to style blocks of content</p>
                 <h2>The &lt;span&gt; Element</h2>
@@ -89,7 +103,7 @@ function Part2() {
                     <li>&lt;summary&gt; - Defines a visible heading for a &lt;details&gt; element</li>
                     <li>&lt;time&gt; - Defines a date/time</li>
                 </ul>
-                <img  className = 'images' src= {e4}/>
+                <img  className = 'images2p2' src= {e4}/>
                 <h2>HTML Encoding (Character Sets)</h2>
                 <p>To display an HTML page correctly, a web browser must know which character set to use. ASCII was the first character encoding standard. ASCII defined 128 different characters that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ &lt; &gt; .ISO-8859-1 was the default character set for HTML 4. This character set supported 256 different character codes. HTML 4 also supported UTF-8. ANSI (Windows-1252) was the original Windows character set. ANSI is identical to ISO-8859-1, except that ANSI has 32 extra characters.The HTML5 specification encourages web developers to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!</p>
                 <h2>HTML VS XHTML</h2>

@@ -1,18 +1,32 @@
 import React from 'react'
 import './About.css'
+import { useEffect,useState } from 'react'
 import shayImage from './shay.jpg'
 import cv from './cv.pdf'
 import Navbar from '../../components/Navbar/Navbar'
+import NavbarMini from '../../components/NavbarMini/NavbarMini'
 
 function About() {
     const handeleClick = () => {
         const openPdfButton = document.getElementById('openPdfButton');
         window.open(cv, '_blank');
     }
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
     <div>
         <body>
-            <Navbar />
+            {isMobile ? <NavbarMini /> : <Navbar />}
             <section className="about-us">
                 <div className="about">
                 <img src={shayImage} alt="Shay Lavi" className='pic' />

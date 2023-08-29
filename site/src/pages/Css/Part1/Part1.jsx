@@ -4,12 +4,27 @@ import e1 from './e1.gif'
 import e2 from './e2.png'
 import e3 from './e3.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
+
 function Part1c() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/css/part1">Basics part 1</a>
         <a href="/css/part2">Basics part 2</a>
         <a href="/css/advancedpart1">Advanced part 1</a>
@@ -17,7 +32,7 @@ function Part1c() {
         <a href="/css/quiz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockcs">
                 <h2>What is CSS?</h2>
                 <ul>
                     <li>CSS stands for Cascading Style Sheets</li>
@@ -29,7 +44,7 @@ function Part1c() {
                 <p>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.</p>
                 <h2>CSS Syntax</h2>
                 <p>The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon. Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
-                <img className = 'image' src= {e1}/>
+                <img className = 'imagecs' src= {e1}/>
                 <h2>CSS Selectors</h2>
                 <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
                 <h2>We can divide CSS selectors into five categories:</h2>
@@ -55,7 +70,7 @@ function Part1c() {
                     <li>Internal CSS - An internal style sheet may be used if one single HTML page has a unique style.</li>
                     <li>Inline CSS - An inline style may be used to apply a unique style for a single element.</li>
                 </ul>
-                <img className = 'image1' src= {e2}/>
+                <img className = 'imagecs' src= {e2}/>
                 <h2>CSS Colors</h2>
                 <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
                 <h2>CSS Backgrounds</h2>
@@ -124,7 +139,7 @@ function Part1c() {
                 </ul>
                 <h2>The CSS Box Model</h2>
                 <p>In CSS, the term "box model" is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:</p>
-                <img className = 'image1' src= {e3}/>
+                <img className = 'imagecs' src= {e3}/>
                 <h2>CSS Outline</h2>
                 <p>An outline is a line drawn outside the element's border.</p>
                 <p><b>CSS Outline Styles:</b></p>

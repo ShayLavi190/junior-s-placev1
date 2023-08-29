@@ -1,18 +1,32 @@
 import React from 'react'
 import './Courses.css'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini';
 function Courses() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/explore/tools">Tools</a>
         <a href="/explore/courses">Courses</a>
         <a href="/explore/tips">Tips</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
               <p>Web development is an essential skill in today’s digital world, and online courses are a great way to learn and improve your skills. Udemy is a platform that offers a wide variety of courses for web developers, covering everything from the basics of HTML and CSS to advanced topics like React and Node.js. In this article, we’ve compiled a list of the top 10 Udemy courses for web developers in 2023. It include both frontend and backend development courses covering essential web development technologies. Each course is accompanied by a description, duration, instructor, rating, and price to help you decide which one is right for you. Whether you’re a beginner or an experienced developer, there’s a course on this list that can help you reach your goals.</p>
               <h2>The Complete 2023 Web Developer Bootcamp</h2>
               <p> This comprehensive course covers everything you need to know to become a proficient web developer, from the basics of HTML and CSS to advanced topics like Node.js and React. You’ll learn by building real-world projects and get support from a community of over 200,000 students.</p>

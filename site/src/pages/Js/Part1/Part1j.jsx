@@ -9,13 +9,27 @@ import e6 from './e6.png'
 import e7 from './e7.png'
 import e8 from './e8.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Part1j() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
@@ -25,7 +39,7 @@ function Part1j() {
         <a href="/js/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockcs">
                 <p><b>JavaScript is a lightweight programming language commonly used by web developers to add dynamic interactions to web pages, applications, servers, and even games. It works seamlessly alongside HTML and CSS, complementing CSS in formatting HTML elements while providing user interaction, a capability that CSS alone lacks. JavaScript’s widespread applications in web, mobile app, and game development make it a valuable language to learn.</b></p>
                 <h2>JavaScript Can Change HTML Content</h2>
                 <p>One of many JavaScript HTML methods is getElementById(). The method "finds" an HTML element (with id="demo"), and changes the element content (innerHTML).You can change by this method visability, style, position etc. of elements.</p>
@@ -62,20 +76,20 @@ function Part1j() {
                 <h2>Block Scope</h2>
                 <p>Before ES6 (2015), JavaScript had Global Scope and Function Scope. ES6 introduced two important new JavaScript keywords: let and const. These two keywords provide Block Scope in JavaScript. Variables declared inside a { } block cannot be accessed from outside the block</p>
                 <h2>Difference Between var, let and const</h2>
-                <img  className = 'image' src= {e1}/>
+                <img  className = 'imagejs' src= {e1}/>
                 <h2>JavaScript Operators</h2>
                 <p><b>JavaScript Arithmetic Operators</b></p>
-                <img  className = 'image' src= {e2}/>
+                <img  className = 'imagejs' src= {e2}/>
                 <h2>JavaScript Assignment Operators</h2>
-                <img  className = 'image' src= {e3}/>
+                <img  className = 'imagejs' src= {e3}/>
                 <h2>JavaScript Comparison Operators</h2>
-                <img  className = 'image' src= {e4}/>
+                <img  className = 'imagejs' src= {e4}/>
                 <h2>JavaScript Logical Operators</h2>
-                <img  className = 'image' src= {e5}/>                
+                <img  className = 'imagejs' src= {e5}/>                
                 <h2>JavaScript Type Operators</h2>
-                <img  className = 'image' src= {e6}/>
+                <img  className = 'imagejs' src= {e6}/>
                 <h2>JavaScript Bitwise Operators</h2>
-                <img  className = 'image' src= {e7}/>
+                <img  className = 'imagejs' src= {e7}/>
                 <p><b>JavaScript has 8 Datatypes</b></p>
                 <ul>
                     <li>String</li>
@@ -137,7 +151,7 @@ function Part1j() {
                 <p><b>includes()</b> - The includes() method returns true if a string contains a specified value. Otherwise it returns false.</p>
                 <p><b>startsWith()</b> - The startsWith() method returns true if a string begins with a specified value. Otherwise it returns false.</p>
                 <p><b>endsWith()</b> -The endsWith() method returns true if a string ends with a specified value. Otherwise it returns false.</p>
-                <img  className = 'image' src= {e8}/>
+                <img  className = 'imagejs' src= {e8}/>
             </div>
         </div>
       <footer class="py-3 bg-dark fixed-bottom">

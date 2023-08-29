@@ -5,13 +5,28 @@ import e2 from './e2.png'
 import e3 from './e3.png'
 import e4 from './e4.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
+
 
 function Aysnc() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
@@ -21,14 +36,14 @@ function Aysnc() {
         <a href="/js/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
                 <h2>JavaScript Callbacks</h2>
                 <p>A callback is a function passed as an argument to another function. This technique allows a function to call another function. A callback function can run after another function has finished</p>
                 <p>Example of callback function:</p>
-                <img  className = 'image' src= {e1}/>
+                <img  className = 'imagejs' src= {e1}/>
                 <h2>What is Callback Hell ? </h2>
                 <p>Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.</p>
-                <img  className = 'image' src= {e2}/>
+                <img  className = 'imagejs' src= {e2}/>
                 <h2>Asynchronous JavaScript</h2>
                 <p>Functions running in parallel with other functions are called asynchronous.</p>
                 <h2>JavaScript Promises</h2>
@@ -40,9 +55,9 @@ function Aysnc() {
                     <li>Rejected</li>
                 </ul>
                 <p>The Promise object supports two properties: state and result. While a Promise object is "pending" (working), the result is undefined. When a Promise object is "fulfilled", the result is a value. When a Promise object is "rejected", the result is an error object.</p>
-                <img  className = 'image' src= {e3}/>
+                <img  className = 'imagejs' src= {e3}/>
                 <p>async makes a function return a Promise. await makes a function wait for a Promise. The keyword async before a function makes the function return a promise. The await keyword can only be used inside an async function. The await keyword makes the function pause the execution and wait for a resolved promise before it continues</p>
-                <img  className = 'image' src= {e4}/>
+                <img  className = 'imagejs' src= {e4}/>
             </div>
         </div>
       <footer class="py-3 bg-dark fixed-bottom">

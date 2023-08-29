@@ -2,12 +2,27 @@ import React from 'react'
 import './Media.css'
 import e1 from './e1.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini';
+import { useEffect,useState } from 'react'
+
 function Media() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width : '120px'}}>
       <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -16,13 +31,13 @@ function Media() {
         <a href="/html/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockmedia">
                 <h2>HTML Canvas Graphics</h2>
                 <p>The HTML &lt;canvas&gt; element is used to draw graphics, on the fly, via JavaScript. The &lt;canvas&gt; element is only a container for graphics. You must use JavaScript to actually draw the graphics. Canvas has several methods for drawing paths, boxes, circles, text, and adding images.</p>
                 <h2>HTML SVG Graphics</h2>
                 <p>SVG defines vector-based graphics in XML format. The HTML &lt;svg&gt; element is a container for SVG graphics. SVG has several methods for drawing paths, boxes, circles, text, and graphic images.</p>
                 <p><b>Differences Between SVG and Canvas</b></p>
-                <img  className = 'images2' src= {e1}/>
+                <img  className = 'imagesmedia' src= {e1}/>
                 <h2>HTML Multimedia</h2>
                 <p>Multimedia comes in many different formats. It can be almost anything you can hear or see, like images, music, sound, videos, records, films, animations, and more. Web pages often contain multimedia elements of different types and formats. The first web browsers had support for text only, limited to a single font in a single color. Later came browsers with support for colors, fonts, images, and multimedia. Multimedia elements (like audio or video) are stored in media files.
                     The most common way to discover the type of a file, is to look at the file extension. Multimedia files have formats and different extensions like: .wav, .mp3, .mp4, .mpg, .wmv, and .avi.</p>

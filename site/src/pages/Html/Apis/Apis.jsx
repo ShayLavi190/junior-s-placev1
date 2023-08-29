@@ -1,13 +1,27 @@
 import React from 'react'
 import './Apis.css'
 import Navbar from '../../../components/Navbar/Navbar'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini';
+import { useEffect,useState } from 'react'
 
 function Apis() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width :'120px'}}>
       <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -16,7 +30,7 @@ function Apis() {
         <a href="/html/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockapi">
                 <h2>HTML Geolocation API</h2>
                 <p>The HTML Geolocation API is used to locate a user's position. For using it The getCurrentPosition() method is used to return the user's position.The second parameter of the getCurrentPosition() method is used to handle errors. It specifies a function to run if it fails to get the user's location.</p>
                 <h2>The getCurrentPosition() Method - Return Data</h2>

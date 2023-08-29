@@ -1,12 +1,27 @@
 import React from 'react'
 import './Nodejs.css'
 import Navbar from '../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../components/NavbarMini/NavbarMini';
+
 function Nodejs() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+       {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/nodejs/part1">Basics part 1</a>
         <a href="/nodejs/part2">Basics part 2</a>
         <a href="/nodejs/mongodb">MongoDB</a>
@@ -14,13 +29,13 @@ function Nodejs() {
         <a href="/nodejs/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-          <div class="">
-              <div class="">
-                  <h1 class="font">Node.js</h1>
-                  <h1 class="font2">Node.js is a cross-platform, open-source server environment that can run on </h1>
-                  <h1 class="font2"> Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript</h1>
-                  <h1 class="font2">runtime environment, runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.</h1>
-                  <h1 class="font3">choose your subject from the sidebar.</h1>
+          <div class="textblock3">
+              <div class="textblock3">
+                  <h1 class="fontnode">Node.js</h1>
+                  <h1 class="font2node">Node.js is a cross-platform, open-source server environment that can run on </h1>
+                  <h1 class="font2node"> Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript</h1>
+                  <h1 class="font2node">runtime environment, runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.</h1>
+                  <h1 class="font3node">choose your subject from the sidebar.</h1>
 
               </div>
           </div>

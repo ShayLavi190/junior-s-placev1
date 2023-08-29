@@ -1,5 +1,5 @@
 
-.font3
+.font3node
 {
   color: #00eefb;
   font-size: 40px;
@@ -8,7 +8,7 @@
 
 
 }
-  .font
+  .fontnode
   {
     color: white;
     text-align: center;
@@ -17,7 +17,7 @@
     margin-left: 140px;
 
   }
-  .font2
+  .font2node
   {
     color: white;
     text-align: center;
@@ -59,7 +59,11 @@
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 800px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .fontnode{margin-top: 20px; font-size: 25px;}
+    .font2node{font-size: 22px;}
+    .font3node{font-size: 23px;}
+    .textblock3{position: relative;top:30px}
   }

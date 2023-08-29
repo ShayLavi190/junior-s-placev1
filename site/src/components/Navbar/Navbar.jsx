@@ -1,9 +1,8 @@
 import React from 'react';
-
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div className="container px-0"> {/* Adjusted px value */}
+      <div className="container px-2000"> 
         <a className="navbar-brand" href="/">Junior's place</a>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

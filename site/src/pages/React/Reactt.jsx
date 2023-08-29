@@ -1,12 +1,27 @@
 import React from 'react'
 import './Reactt.css'
 import Navbar from '../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../components/NavbarMini/NavbarMini';
+
 function Reactt() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/react/part1">Basics part 1</a>
         <a href="/react/part2">Basics part 2</a>
         <a href="/react/hooks">Hooks</a>
@@ -15,13 +30,13 @@ function Reactt() {
         <a href="/react/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-          <div class="">
-              <div class="">
-                  <h1 class="font">React</h1>
-                  <h1 class="font2">React (also known as React.js) is a free and open-source front-end </h1>
-                  <h1 class="font2"> JavaScript library for building user interfaces based on components.</h1>
-                  <h1 class="font2">It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.</h1>
-                  <h1 class="font3">choose your subject from the sidebar.</h1>
+          <div class="textblock4">
+              <div class="textblock4">
+                  <h1 class="fontnode">React</h1>
+                  <h1 class="font2node">React (also known as React.js) is a free and open-source front-end </h1>
+                  <h1 class="font2node"> JavaScript library for building user interfaces based on components.</h1>
+                  <h1 class="font2node">It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.</h1>
+                  <h1 class="font3node">choose your subject from the sidebar.</h1>
               </div>
           </div>
       </div>

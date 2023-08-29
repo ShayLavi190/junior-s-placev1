@@ -59,9 +59,10 @@
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  @media screen and (max-width: 900px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .quiz-container{position: relative; bottom: 50px; right: 50px;width:69%;}
   }
 
   .images

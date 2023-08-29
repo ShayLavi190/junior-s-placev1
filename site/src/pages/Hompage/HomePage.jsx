@@ -2,6 +2,7 @@ import './HomePage.css';
 import React, { useState, useEffect } from 'react';
 import jsonData from '../../model/HomePage.json';
 import Navbar from '../../components/Navbar/Navbar';
+import NavbarMini from '../../components/NavbarMini/NavbarMini';
 
 function HomePage() {
     const divElements = jsonData.pages
@@ -21,22 +22,33 @@ function HomePage() {
               </div>
           ))
         : null;
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
+        useEffect(() => {
+          const handleResize = () => {
+            setIsMobile(window.innerWidth < 800);
+          };
+      
+          window.addEventListener('resize', handleResize);
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }, []);
     return (
         <html>
             <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
             </head>
             <body>
-                <Navbar />
-                <div className="container px-9 px-lg-30">
-                    <div className="">
-                        <div className="">
-                            <h1 className="font2" style={{ fontSize: '40px',marginRight:'130px',marginBottom:'50px'}}>Wellcome to Junior's place</h1>
-                            <h1 className="font2" style={{ fontSize: '30px',marginRight:'130px',marginBottom:'5x' }}>The perferct place to develope your skills as a web developer</h1>
-                            <h1 className="font2" style={{ fontSize: '30px',marginRight:'130px',marginBottom:'30px' }}>In this site your can learn about web developing front to back</h1>
+                {isMobile ? <NavbarMini /> : <Navbar />}
+                <div>
+                    <div className='con'>
+                        <div>
+                        <h1 className="font2 display-4 mb-4" style={{paddingRight:'100px'}}>Welcome to Junior's Place</h1>
+                        <h2 className="font2 h4 mb-4" style={{paddingRight:'100px'}}>The perfect place to develop your skills as a web developer</h2>
+                        <h2 className="font2 h4" style={{paddingRight:'100px'}}>In this site, you can learn about web development from front to back</h2>
                         </div>
                     </div>
                     <div className="row gx-4 gx-lg-5">

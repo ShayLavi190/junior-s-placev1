@@ -8,12 +8,27 @@ import e5 from './e5.png'
 import e6 from './e6.png'
 import e7 from './e7.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
+
 function Part1() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -22,8 +37,8 @@ function Part1() {
         <a href="/html/quizz">Quiz</a>
 
       </div>
-      <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+      <div>
+            <div class="white-text-blockp1">
                 <h2>What is HTML?</h2>
                 <ul>
                     <li>HTML stands for Hyper Text Markup Language</li>
@@ -34,7 +49,7 @@ function Part1() {
                     <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
                 </ul>
                 <h2>Example</h2>
-                <img className = 'images' src= {e1}/>
+                <img className = 'images11' src= {e1}/>
                 <h2>Basic labels</h2>
                 <ul>
                     <li>The &lt;!DOCTYPE html&gt; declaration defines that this document is an HTML5 document</li>
@@ -51,16 +66,16 @@ function Part1() {
                 <p>The HTML element is everything from the start tag to the end tag</p>
                 <h2>HTML Headings</h2>
                 <p>HTML headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags.</p>
-                <img className = 'images2' src= {e2}/>
+                <img className = 'images21' src= {e2}/>
                 <h2>HTML Paragraphs</h2>
                 <p>HTML paragraphs are defined with the &lt;p&gt; tag</p>
-                <img className = 'images2' src= {e3}/>
+                <img className = 'images21' src= {e3}/>
                 <h2>HTML Links</h2>
                 <p>HTML links are defined with the &lt;a&gt; tag</p>
-                <img className = 'images2' src= {e4}/>
+                <img className = 'images21' src= {e4}/>
                 <h2>HTML Images</h2>
                 <p>HTML images are defined with the &lt;img&gt; tag. The source file (src), alternative text (alt), width, and height are provided as attributes</p>
-                <img  className = 'images2' src= {e5}/>
+                <img  className = 'images21' src= {e5}/>
                 <h2>HTML Attributes</h2>
                 <ul>
                     <li>All HTML elements can have attributes</li>
@@ -147,7 +162,7 @@ function Part1() {
                 <p>The HTML &lt;picture&gt; element gives web developers more flexibility in specifying image resources. The &lt;picture&gt; element contains one or more &lt;source&gt; elements, each referring to different images through the srcset attribute. This way the browser can choose the image that best fits the current view and/or device. Each &lt;source&gt; element has a media attribute that defines when the image is the most suitable.</p>
                 <h2>HTML Favicon</h2>
                 <p>A favicon image is displayed to the left of the page title in the browser tab, like this:</p>
-                <img  className = 'images3' src= {e6}/>
+                <img  className = 'images21' src= {e6}/>
                 <p>To add a favicon to your website, either save your favicon image to the root directory of your webserver, or create a folder in the root directory called images, and save your favicon image in this folder. A common name for a favicon image is "favicon.ico". Next, add a &lt;link&gt; element to your "index.html" file, after the &lt;title&gt; element</p>
                 <h2>HTML Tables</h2>
                 <p>HTML tables allow web developers to arrange data into rows and columns.</p>
@@ -164,7 +179,7 @@ function Part1() {
                     <li> &lt;tbody&gt; - Groups the body content in a table </li>
                     <li> &lt;tfoot&gt; - Groups the footer content in a table </li>
                 </ul>
-                <img  className = 'images2' src= {e7}/>
+                <img  className = 'images21' src= {e7}/>
                 <h2>HTML Table guidelines</h2>
                 <ul>
                     <li> To add a border, use the CSS border property on table, th, and td elements</li>

@@ -7,13 +7,27 @@ import e4 from './e4.png'
 import e5 from './e5.png'
 import e6 from './e6.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Jad() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
       <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
@@ -23,9 +37,9 @@ function Jad() {
         <a href="/js/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
                 <p>With the HTML DOM, JavaScript can access and change all the elements of an HTML document.When a web page is loaded, the browser creates a Document Object Model of the page. The HTML DOM model is constructed as a tree of Objects:</p>
-                <img  className = 'image' src= {e1}/>
+                <img  className = 'imagejs' src= {e1}/>
                 <h2>What is the DOM?</h2>
                 <p>The W3C DOM standard is separated into 3 different parts:</p>
                 <ul>
@@ -48,15 +62,15 @@ function Jad() {
                 <h2>The HTML DOM Document Object</h2>
                 <p>The document object represents your web page. If you want to access any element in an HTML page, you always start with accessing the document object. Below are some examples of how you can use the document object to access and manipulate HTML.</p>
                 <h2>Finding HTML Elements</h2>
-                <img  className = 'image' src= {e5}/>
+                <img  className = 'imagejs' src= {e5}/>
                 <h2>Changing HTML Elements</h2>
-                <img  className = 'image' src= {e2}/>
+                <img  className = 'imagejs' src= {e2}/>
                 <h2>Adding and Deleting Elements</h2>
-                <img  className = 'image' src= {e3}/>
+                <img  className = 'imagejs' src= {e3}/>
                 <h2>Adding Events Handlers</h2>
                 <p><b>document.getElementById(id).onclick = function()</b> - Adding event handler code to an onclick event</p>
                 <h2>Finding HTML Objects</h2>
-                <img  className = 'image' src= {e4}/>
+                <img  className = 'imagejs' src= {e4}/>
                 <p><b>The easiest way to modify the content of an HTML element is by using the innerHTML property. To change the content of an HTML element, use this syntax: document.getElementById(id).innerHTML = new HTML</b></p>
                 <p><b>To change the style of an HTML element, use this syntax: document.getElementById(id).style.property = new style</b></p>
                 <h2>JavaScript HTML DOM Events</h2>
@@ -66,7 +80,7 @@ function Jad() {
                 <p>The addEventListener() method attaches an event handler to the specified element. The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.You can add many event handlers to one element. You can add many event handlers of the same type to one element, i.e two "click" events. You can add event listeners to any DOM object not only HTML elements. i.e the window object. The addEventListener() method makes it easier to control how the event reacts to bubbling. When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup. You can easily remove an event listener by using the removeEventListener() method.</p>
                 <h2>jQuery vs JavaScript</h2>
                 <p>jQuery was created in 2006 by John Resig. It was designed to handle Browser Incompatibilities and to simplify HTML DOM Manipulation, Event Handling, Animations, and Ajax. For more than 10 years, jQuery has been the most popular JavaScript library in the world. However, after JavaScript Version 5 (2009), most of the jQuery utilities can be solved with a few lines of standard JavaScript: </p>
-                <img  className = 'image' src= {e6}/>
+                <img  className = 'imagejs' src= {e6}/>
                 <h2>Code examples for the diffrences between jQuery vs JS</h2>
                 <p><b>Set Text Content</b> - myElement.text("Hello Sweden!"); in jQuery and myElement.textContent = "Hello Sweden!"; in Js</p>
                 <p><b>Get Text Content</b> - myText = $("#02").text(); in jQuery and myText = document.getElementById("02").textContent; in Js</p>

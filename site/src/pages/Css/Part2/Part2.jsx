@@ -3,13 +3,27 @@ import './Part2.css'
 import e1 from './e1.png'
 import e2 from './e2.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 
 function Part2c() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/css/part1">Basics part 1</a>
         <a href="/css/part2">Basics part 2</a>
         <a href="/css/advancedpart1">Advanced part 1</a>
@@ -17,7 +31,7 @@ function Part2c() {
         <a href="/css/quiz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockcs">
                 <h2>CSS Tables</h2>
                 <p>The look of an HTML table can be greatly improved with CSS.</p>
                 <ul>
@@ -106,9 +120,9 @@ function Part2c() {
                     <li>Style an element when it gets focus.</li>
                 </ul>
                 <h2>All CSS Pseudo Classes</h2>
-                <img className = 'images3' src= {e1}/>
+                <img className = 'imagescs1' src= {e1}/>
                 <h2>All CSS Pseudo Elements</h2>
-                <img className = 'images4' src= {e2}/>
+                <img className = 'imagescs1' src= {e2}/>
                 <h2>CSS The !important Rule</h2>
                 <p>The !important rule in CSS is used to add more importance to a property/value than normal. In fact, if you use the !important rule, it will override ALL previous styling rules for that specific property on that element!</p>
           </div>

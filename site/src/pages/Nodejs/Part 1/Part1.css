@@ -62,6 +62,7 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .imagesnode{size: 100%;}
   }
   .white-text-block
   {
@@ -74,21 +75,7 @@
     opacity: 90%;
     border-radius: 7px;
   }
-  .images
-  {
-    margin: 10px;
-    border-radius: 7px;
-    width: 50%;
-    height: 50%;
-  }
-  .images2
-  {
-    margin: 10px;
-    border-radius: 7px;
-    width: 50%;
-    height: 50%;
-  }
-  .images3
+  .imagesnode
   {
     margin: 10px;
     border-radius: 7px;

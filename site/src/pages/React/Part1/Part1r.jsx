@@ -8,12 +8,26 @@ import e4 from './e4.png'
 import e5 from './e5.png'
 import e6 from './e6.png'
 import e7 from './e7.png'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 function Part1r() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/react/part1">Basics part 1</a>
         <a href="/react/part2">Basics part 2</a>
         <a href="/react/hooks">Hooks</a>
@@ -22,7 +36,7 @@ function Part1r() {
         <a href="/react/quizz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
                 <h2>Create React App</h2>
                 <p>To learn and test React, you should set up a React Environment on your computer. The create-react-app tool is an officially supported way to create React applications. Node.js is required to use create-react-app. Open your terminal in the directory you would like to create your application. Run this command to create a React application named my-react-app:</p>
                 <p><b>npx create-react-app my-react-app</b></p>
@@ -61,7 +75,7 @@ function Part1r() {
                 <p> There is another folder in the root directory of your React project, named "public". In this folder, there is an index.html file. You'll notice a single &lt;div&gt; in the body of this file. This is where our React application will be rendered.</p>
                 <h2>The HTML Code</h2>
                 <p>The HTML code uses JSX which allows you to write HTML tags inside the JavaScript code:</p>
-                <img className = 'images3' src= {e1}/>
+                <img className = 'imagereact' src= {e1}/>
                 <h2>The Root Node</h2>
                 <p>The root node is the HTML element where you want to display the result. It is like a container for content managed by React. It does NOT have to be a &lt;div&gt; element and it does NOT have to have the id='root'.</p>
                 <h2>What is JSX?</h2>
@@ -77,32 +91,32 @@ function Part1r() {
                 <p>React supports if statements, but not inside JSX. To be able to use conditional statements in JSX, you should put the if statements outside of the JSX, or you could use a ternary expression instead:</p>
                 <p><b>Option 1:</b></p>
                 <p>Write if statements outside of the JSX code:</p>
-                <img className = 'images3' src= {e2}/>
+                <img className = 'imagereact' src= {e2}/>
                 <p><b>Option 2:</b></p>
                 <p>Use ternary expressions instead:</p>
-                <img className = 'images3' src= {e3}/>
+                <img className = 'imagereact' src= {e3}/>
                 <h2>React Components</h2>
                 <p>Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.</p>
                 <p>When creating a React component, the component's name MUST start with an upper case letter.</p>
                 <ul>
                     <li><b>Class Component </b>- A class component must include the extends React.Component statement. This statement creates an inheritance to React.Component, and gives your component access to React.Component's functions. The component also requires a render() method, this method returns HTML.</li>
-                    <img className = 'images3' src= {e4}/>
+                    <img className = 'imagereact' src= {e4}/>
                     <li><b>Function Component </b>- Here is the same example as above, but created using a Function component instead. A Function component also returns HTML, and behaves much the same way as a Class component, but Function components can be written using much less code, are easier to understand.</li>
                 </ul>
                 <p>To use this component in your application, use similar syntax as normal HTML: &lt;Component /&gt;</p>
                 <p>Components can be passed as props, which stands for properties. Props are like function arguments, and you send them into the component as attributes.</p>
-                <img className = 'images3' src= {e5}/>
+                <img className = 'imagereact' src= {e5}/>
                 <h2>Class Components</h2>
                 <p>Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less". With the addition of Hooks, Function components are now almost equivalent to Class components. The differences are so minor that you will probably never need to use a Class component in React. Even though Function components are preferred, there are no current plans on removing Class components from React. This section will give you an overview of how to use Class components in React.</p>
                 <p>When creating a React component, the component's name must start with an upper case letter. The component has to include the extends React.Component statement, this statement creates an inheritance to React.Component, and gives your component access to React.Component's functions. The component also requires a render() method, this method returns HTML.</p>
                 <p>If there is a constructor() function in your component, this function will be called when the component gets initiated. The constructor function is where you initiate the component's properties. In React, component properties should be kept in an object called state. The constructor function is also where you honor the inheritance of the parent component by including the super() statement, which executes the parent component's constructor function, and your component has access to all the functions of the parent component (React.Component).</p>
-                <img className = 'images3' src= {e6}/>
+                <img className = 'imagereact' src= {e6}/>
                 <p>Another way of handling component properties is by using props. Props are like function arguments, and you send them into the component as attributes. If your component has a constructor function, the props should always be passed to the constructor and also to the React.Component via the super() method.</p>
                 <h2>React Class Component State</h2>
                 <p>React Class components have a built-in state object. You might have noticed that we used state earlier in the component constructor section. The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.</p>
                 <h2>Using the state Object</h2>
                 <p>Refer to the state object anywhere in the component by using the this.state.propertyname syntax:</p>
-                <img className = 'images3' src= {e7}/>
+                <img className = 'imagereact' src= {e7}/>
                 <p>To change a value in the state object, use the this.setState() method. When a value in the state object changes, the component will re-render, meaning that the output will change according to the new value(s).</p>
                 <h2>Lifecycle of Components</h2>
                 <p>Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting.</p>

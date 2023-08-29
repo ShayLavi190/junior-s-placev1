@@ -2,12 +2,26 @@ import React from 'react'
 import './Apart1.css'
 import e1 from './e1.png'
 import Navbar from '../../../components/Navbar/Navbar'
+import { useEffect,useState } from 'react'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini'
 function Apart1() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 800);
+      };
+  
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   return (
       <div>
       <body>
-        <Navbar />
-      <div class="sidenav sticky-to">
+      {isMobile ? <NavbarMini /> : <Navbar />}
+      <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/css/part1">Basics part 1</a>
         <a href="/css/part2">Basics part 2</a>
         <a href="/css/advancedpart1">Advanced part 1</a>
@@ -15,7 +29,7 @@ function Apart1() {
         <a href="/css/quiz">Quiz</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockcs">
                 <h2>CSS Rounded Corners</h2>
                 <p>The CSS border-radius property defines the radius of an element's corners.</p>
                 <h2>CSS Border Images</h2>
@@ -81,7 +95,7 @@ function Apart1() {
                 <h2>CSS 3D Transforms</h2>
                 <p>CSS also supports 3D transformations. Mouse over the elements below to see the difference between a 2D and a 3D transformation</p>
                 <p><b>CSS 3D Transform Properties and Methods</b></p>
-                <img className = 'images5' src= {e1}/>
+                <img className = 'imagecs1' src= {e1}/>
                 <h2>CSS Transitions</h2>
                 <p>CSS transitions allows you to change property values smoothly, over a given duration.</p>
                 <p><b>CSS Transition Properties:</b></p>

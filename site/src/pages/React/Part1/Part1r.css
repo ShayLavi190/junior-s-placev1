@@ -62,8 +62,9 @@
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .imagereact {width: 100%;}
   }
-  .image
+  .imagereact
   {
     margin: 10px;
     border-radius: 7px;

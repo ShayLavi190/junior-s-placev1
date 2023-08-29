@@ -1,18 +1,33 @@
 import React from 'react'
 import './Tips.css'
 import Navbar from '../../../components/Navbar/Navbar'
+import NavbarMini from '../../../components/NavbarMini/NavbarMini';
+import { useEffect,useState } from 'react'
+
 function Tips() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
       <div>
       <body>
-        <Navbar />
-        <div class="sidenav sticky-to">
+        {isMobile ? <NavbarMini /> : <Navbar />}
+        <div class="sidenavv sticky-to" style={{width:'120px'}}>
         <a href="/explore/tools">Tools</a>
         <a href="/explore/courses">Courses</a>
         <a href="/explore/tips">Tips</a>
       </div>
       <div class="container px-9 px-lg-30">
-            <div class="white-text-block">
+            <div class="white-text-blockjs">
               <p>A web developer is a professional who works on websites, domains, and apps. They plan, modify, write code, and build web pages, internet sites, and apps. Web development is a rapidly evolving field. There is no justification for procrastinating as a programmer. If you want to remain on top of the latest trends and maintain a competitive edge, you must continuously study and develop your abilities. If you’re like most programmers, you’ve undoubtedly glanced at the code and thought about how you might improve it. There will always be opportunities for growth as a programmer, no issue what you’re doing in your profession. Learners should improve their abilities, while experienced developers should constantly try to enhance their code’s clarity, efficiency, and ease of maintenance. This article offers fifteen ideas to assist developers in enhancing their development abilities and making quantifiable improvements from where they are momentary to where they want to be someday.</p>
               <h2>1. Make use of the proper tools</h2>
               <p>This should be self-evident: Make sure you have the suitable instruments and understand how to utilize them. Photoshop and Illustrator are very certainly required for web designers. However, if you’re a web developer, you’ll need a solid collection of web development applications to assist you. Naturally, toolkits vary across vocations and individuals. For example, some people will just require a terminal to create their websites rather than the Coda website development package. What is important is that your instruments assist you in completing the task as quickly as possible.</p>

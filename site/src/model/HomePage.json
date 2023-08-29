@@ -14,18 +14,25 @@
             "page_title": "CSS",
             "page_description": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).",
             "href": "/css"
-        },        {
+        },
+        {
+            "page_title": "Js",
+            "page_description": "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web.",
+            "href": "/js"
+        },       
+        {
             "page_title": "Node.js",
             "page_description": "Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.",
             "href": "/nodejs"
-        },        {
+        },
+        {
             "page_title": "React",
             "page_description": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.",
             "href": "/react"
         },        
         {
-            "page_title": "Others",
-            "page_description": "In the Explore page contains information about Mongodb and Firebase data bases, explanation about Vue.js and tips from the best.",
+            "page_title": "Explore",
+            "page_description": "In the Explore page contains information about Developer tools that you should try, recomended udemy courses and tips from the bests.",
             "href": "/explore"
         }
     ]
