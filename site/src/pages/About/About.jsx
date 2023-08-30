@@ -46,9 +46,11 @@ function About() {
                 </div>
                 </div>
             </section>
+            <div className='contain'>
             <footer className="py-5 bg-dark">
-                <div className="container px-4 px-lg-5"><p className="m-0 text-center text-white">Copyright &copy; shay lavi 2023</p></div>
+                  <div className="container px-4 px-lg-5"><p className="m-0 text-center text-white">Copyright &copy; shay lavi 2023</p></div>
             </footer>
+            </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
             <script src="js/scripts.js"></script>
     </body>

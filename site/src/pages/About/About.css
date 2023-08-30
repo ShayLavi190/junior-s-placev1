@@ -87,5 +87,6 @@ visibility: hidden;
 .data{
   display: grid;
 }
+.contain{position: relative;top:50px}
 
 }
