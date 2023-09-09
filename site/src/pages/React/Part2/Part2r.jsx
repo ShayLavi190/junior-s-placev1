@@ -38,6 +38,7 @@ function Part2r() {
       <body>
        {isMobile ? <NavbarMini /> : <Navbar />}
         <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/react">Intro</a>
         <a href="/react/part1">Basics part 1</a>
         <a href="/react/part2">Basics part 2</a>
         <a href="/react/hooks">Hooks</a>

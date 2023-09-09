@@ -22,6 +22,7 @@ function Reactt() {
       <body>
         {isMobile ? <NavbarMini /> : <Navbar />}
         <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/react">Intro</a>
         <a href="/react/part1">Basics part 1</a>
         <a href="/react/part2">Basics part 2</a>
         <a href="/react/hooks">Hooks</a>
@@ -36,7 +37,7 @@ function Reactt() {
                   <h1 class="font2node">React (also known as React.js) is a free and open-source front-end </h1>
                   <h1 class="font2node"> JavaScript library for building user interfaces based on components.</h1>
                   <h1 class="font2node">It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.</h1>
-                  <h1 class="font3node">choose your subject from the sidebar.</h1>
+                  <h1 class="font3node">choose your subject from the left sidebar.</h1>
               </div>
           </div>
       </div>

@@ -28,7 +28,8 @@ function Part2j() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/js/part1">Basics part 1</a>
+        <a href="/js">Intro</a>
+        <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
         <a href="/js/AJAX">AJAX</a>

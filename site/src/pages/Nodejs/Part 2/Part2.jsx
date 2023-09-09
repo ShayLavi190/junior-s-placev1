@@ -36,7 +36,8 @@ function Part2n() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/nodejs/part1">Basics part 1</a>
+        <a href="/nodejs">Intro</a>
+        <a href="/nodejs/part1">Basics part 1</a>
         <a href="/nodejs/part2">Basics part 2</a>
         <a href="/nodejs/mongodb">MongoDB</a>
         <a href="/nodejs/mysql">MySQL</a>

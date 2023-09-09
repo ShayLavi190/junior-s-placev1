@@ -6,6 +6,11 @@ import NavbarMini from '../../components/NavbarMini/NavbarMini'
 
 function Html() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const handleLinkClick = (link) => {
+    setSelectedLink(link);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,6 +30,7 @@ function Html() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/html">Intro </a>
         <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
@@ -36,7 +42,7 @@ function Html() {
                   <h1 class="fontt">HTML</h1>
                   <h1 class="font22">The HyperText Markup Language or HTML is the standard</h1>
                   <h1 class="font22">markup language for documents designed to be displayed in a web browser.</h1>
-                  <h1 class="font33">choose your subject from the sidebar.</h1>
+                  <h1 class="font33">choose your subject from the left sidebar.</h1>
       </div>
       <footer class="py-3 bg-dark fixed-bottom">
           <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; shay lavi 2023</p></div>

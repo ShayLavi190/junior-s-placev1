@@ -22,7 +22,8 @@ function Nodejs() {
       <body>
        {isMobile ? <NavbarMini /> : <Navbar />}
         <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/nodejs/part1">Basics part 1</a>
+        <a href="/nodejs">Intro</a>
+        <a href="/nodejs/part1">Basics part 1</a>
         <a href="/nodejs/part2">Basics part 2</a>
         <a href="/nodejs/mongodb">MongoDB</a>
         <a href="/nodejs/mysql">MySQL</a>
@@ -35,7 +36,7 @@ function Nodejs() {
                   <h1 class="font2node">Node.js is a cross-platform, open-source server environment that can run on </h1>
                   <h1 class="font2node"> Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript</h1>
                   <h1 class="font2node">runtime environment, runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.</h1>
-                  <h1 class="font3node">choose your subject from the sidebar.</h1>
+                  <h1 class="font3node">choose your subject from the left sidebar.</h1>
 
               </div>
           </div>

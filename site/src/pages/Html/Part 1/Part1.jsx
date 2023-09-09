@@ -29,7 +29,8 @@ function Part1() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/html/part1">Basics part 1</a>
+        <a href="/html">Intro</a>
+        <a href="/html/part1">Basics part 1</a>
         <a href="/html/part2">Basics part 2</a>
         <a href="/html/forms">Forms</a>
         <a href="/html/media">Media</a>

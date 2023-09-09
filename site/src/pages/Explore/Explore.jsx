@@ -21,6 +21,7 @@ function Explore() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/explore">Intro</a>
         <a href="/explore/tools">Tools</a>
         <a href="/explore/courses">Courses</a>
         <a href="/explore/tips">Tips</a>
@@ -30,7 +31,7 @@ function Explore() {
               <div class="textblock1">
                   <h1 class="fontnode">Explore for more...</h1>
                   <h1 class="font2node">In the Explore page You will find tips, additional tools and guidance for recommended continuing courses</h1>
-                  <h1 class="font3node">choose your subject from the sidebar.</h1>
+                  <h1 class="font3node">choose your subject from the left sidebar.</h1>
               </div>
           </div>
       </div>

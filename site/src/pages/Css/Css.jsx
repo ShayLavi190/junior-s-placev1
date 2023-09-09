@@ -21,6 +21,7 @@ function Css() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/css">Intro</a>
         <a href="/css/part1">Basics part 1</a>
         <a href="/css/part2">Basics part 2</a>
         <a href="/css/advancedpart1">Advanced part 1</a>
@@ -34,7 +35,7 @@ function Css() {
                   <h1 class="font2cs">CSS is a style sheet language used for describing the presentation</h1>
                   <h1 class="font2cs"> of a document written in a markup language such as HTML or XML</h1>
                   <h1 class="font2cs">(including XML dialects such as SVG, MathML or XHTML).</h1>
-                  <h1 class="font3cs">choose your subject from the sidebar.</h1>
+                  <h1 class="font3cs">choose your subject from the  left sidebar.</h1>
 
               </div>
           </div>

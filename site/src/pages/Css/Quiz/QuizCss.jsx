@@ -22,12 +22,12 @@ function QuizCss() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/html/part1">Basics part 1</a>
-        <a href="/html/part2">Basics part 2</a>
-        <a href="/html/forms">Forms</a>
-        <a href="/html/media">Media</a>
-        <a href="/html/apis">Apis</a>
-        <a href="/html/quizz">Quiz</a>
+        <a href="/css">Intro</a>
+        <a href="/css/part1">Basics part 1</a>
+        <a href="/css/part2">Basics part 2</a>
+        <a href="/css/advancedpart1">Advanced part 1</a>
+        <a href="/css/advancedpart2">Advanced part 2</a>
+        <a href="/css/quiz">Quiz</a>
       </div>
       <Quiz quizz = {quiz}/>
     <div class="white-text-blockquiz">

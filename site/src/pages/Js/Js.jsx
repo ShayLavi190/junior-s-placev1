@@ -21,7 +21,8 @@ function Js() {
     <body>
     {isMobile ? <NavbarMini /> : <Navbar />}
     <div class="sidenavv sticky-to" style={{width:'120px'}}>
-      <a href="/js/part1">Basics part 1</a>
+        <a href="/js">Intro</a>
+        <a href="/js/part1">Basics part 1</a>
         <a href="/js/part2">Basics part 2</a>
         <a href="/js/Async">Async</a>
         <a href="/js/AJAX">AJAX</a>
@@ -34,7 +35,7 @@ function Js() {
                   <h1 class="fontcs">JavaScript</h1>
                   <h1 class="font2cs">JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, </h1>
                   <h1 class="font2cs"> alongside HTML and CSS. As of 2023,98.7% of websites use JavaScript</h1>
-                  <h1 class="fontjs">choose your subject from the sidebar.</h1>
+                  <h1 class="fontjs">choose your subject from the left sidebar.</h1>
           </div>
       </div>
       <footer class="py-3 bg-dark fixed-bottom">

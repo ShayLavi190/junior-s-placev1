@@ -21,6 +21,7 @@ function Courses() {
       <body>
         {isMobile ? <NavbarMini /> : <Navbar />}
         <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/explore">Intro</a>
         <a href="/explore/tools">Tools</a>
         <a href="/explore/courses">Courses</a>
         <a href="/explore/tips">Tips</a>

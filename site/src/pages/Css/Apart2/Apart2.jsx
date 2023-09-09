@@ -26,6 +26,7 @@ function Apart2() {
       <body>
       {isMobile ? <NavbarMini /> : <Navbar />}
       <div class="sidenavv sticky-to" style={{width:'120px'}}>
+        <a href="/css">Intro</a>
         <a href="/css/part1">Basics part 1</a>
         <a href="/css/part2">Basics part 2</a>
         <a href="/css/advancedpart1">Advanced part 1</a>
